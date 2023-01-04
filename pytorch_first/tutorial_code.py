@@ -93,15 +93,7 @@ if __name__ == '__main__':
     
     net = Net()
     net.load_state_dict(torch.load(PATH))
-    
-    outputs = net(images)
-    
-    _, predicted = torch.max(outputs, 1)
-    
-    print('Predicted: ', ' '.join(f'{classes[predicted[j]]:5s}'
-                                  for j in range(4)))
-    
-    
+
     correct = 0
     total = 0
     # since we're not training, we don't need to calculate the gradients for our outputs
